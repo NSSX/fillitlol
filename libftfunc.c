@@ -6,13 +6,13 @@
 /*   By: avella <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/19 19:32:32 by avella            #+#    #+#             */
-/*   Updated: 2015/12/19 20:34:14 by avella           ###   ########.fr       */
+/*   Updated: 2016/01/18 18:52:31 by avella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*dp(const char *s1)
+char		*dp(const char *s1)
 {
 	int		index;
 	char	*dupli;
@@ -32,7 +32,7 @@ char	*dp(const char *s1)
 	return (dupli);
 }
 
-size_t	ft_strlen(const char *str)
+size_t		ft_strlen(const char *str)
 {
 	size_t index;
 
@@ -42,12 +42,12 @@ size_t	ft_strlen(const char *str)
 	return (index);
 }
 
-void	ft_putchar(char c)
+void		ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char const *str)
+void		ft_putstr(char const *str)
 {
 	int index;
 
@@ -57,4 +57,22 @@ void	ft_putstr(char const *str)
 		ft_putchar(str[index]);
 		index++;
 	}
+}
+
+int			all_try(char *chaine)
+{
+	if (try_1(chaine))
+	{
+		if (try_2(chaine, 0, 0, 0))
+		{
+			if (try_3(chaine, 0, 0, 0))
+			{
+				if (try_4(chaine))
+				{
+					return (1);
+				}
+			}
+		}
+	}
+	return (0);
 }

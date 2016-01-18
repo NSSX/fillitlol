@@ -50,7 +50,7 @@ char	*mychar(int *iactuel, int chainei, char **tab, t_var2 *var2)
 	i = 0;
 	while (var2->tetri < var2->nbt)
 	{
-		v = backtrack(iactuel, iactuel[var2->tetri], tab, var2);
+		v = backtrack(iactuel, tab, var2);
 		if (v == 1)
 		{
 			var2->tetri++;
@@ -69,7 +69,7 @@ char	*mychar(int *iactuel, int chainei, char **tab, t_var2 *var2)
 	return (var2->chaine);
 }
 
-int		backtrack(int *iactuel, int chainei, char **tab, t_var2 *var2)
+int		backtrack(int *iactuel, char **tab, t_var2 *var2)
 {
 	int		i;
 	int		ret;
